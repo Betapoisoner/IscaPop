@@ -6,7 +6,7 @@ public class Centro {
 	private String id_Centro;
 	private String nombre;
 	private String contrasena;
-	ArrayList<articulo> articulos;
+	ArrayList<Articulo> articulos;
 	
 	public Centro(String id_Centro, String nombre, String contrasena) {
 		super();
