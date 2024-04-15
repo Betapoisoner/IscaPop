@@ -1,18 +1,30 @@
 package model;
 
 public class Articulo {
-    private String id;
-    private String estado;
-    private String nombre;
-    private String descripcion;
-    private int cantidad;
-
-    public Articulo( String id, String estado, String nombre, String descripcion, int cantidad) {
-
-        this.id = id;
-        this.estado = estado;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.cantidad = cantidad;
-    }
+	private String id;
+	private String estado;
+	private int cantidad;
+	private String descripcion;
+	private String nombre;
+	
+	 public Articulo(String idCentro, String id, String estado, String nombre, String descripcion, int cantidad) {
+	      
+	        this.id = id;
+	        this.estado = estado;
+	        this.nombre = nombre;
+	        this.descripcion = descripcion;
+	        this.cantidad = cantidad;
+	    }
+	 
+	 
+	 
+	 public void imprimirInformacionArticulo() {
+	        
+	 
+	 }
+	 
+	 
+	 
+	 
 }
+

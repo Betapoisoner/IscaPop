@@ -38,7 +38,7 @@ public class Centro {
 
 
 	public void add_Articulo(String id,String estado,String nombre,int cantidad,String descripcion) {
-		Articulo a = new Articulo(id, estado, nombre, descripcion, cantidad);
+		Articulo a = new Articulo(id, estado, nombre, descripcion, descripcion, cantidad);
 		try {
 			articulos.add(a);
 		} catch (Exception e) {
@@ -46,3 +46,6 @@ public class Centro {
 		}
 	}
 }
+
+
+

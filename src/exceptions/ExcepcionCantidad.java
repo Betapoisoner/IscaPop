@@ -1,5 +1,8 @@
 package exceptions;
 
-public class ExcepcionCantidad {
-
+public class ExcepcionCantidad extends Exception {
+    public ExcepcionCantidad(String mensaje) {
+        super(mensaje);
+    }
 }
+

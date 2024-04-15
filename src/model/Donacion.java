@@ -1,6 +1,7 @@
 package model;
 
 public class Donacion {
+
     private String id_Donacion;
     private String centroDonante;
     private String centroReceptor;
@@ -10,4 +11,7 @@ public class Donacion {
         this.centroDonante = centroDonante;
         this.centroReceptor = centroReceptor;
     }
+
+
+
 }

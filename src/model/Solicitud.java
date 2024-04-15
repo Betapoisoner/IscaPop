@@ -8,4 +8,5 @@ public class Solicitud {
         this.idSolicitud = idSolicitud;
         this.fecha = fecha;
     }
+
 }
