@@ -37,38 +37,38 @@ public class main extends JDialog {
 	 */
 	public main() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 521, 294);
+		setBounds(100, 100, 450, 277);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
 		txtUsr = new JTextField();
-		txtUsr.setBounds(48, 43, 409, 44);
+		txtUsr.setBounds(12, 36, 409, 44);
 		contentPanel.add(txtUsr);
 		txtUsr.setColumns(10);
 		
 		JLabel lblUsr = new JLabel("Usuario");
 		lblUsr.setFont(new Font("Dialog", Font.BOLD, 17));
-		lblUsr.setBounds(48, 19, 91, 23);
+		lblUsr.setBounds(12, 12, 91, 23);
 		contentPanel.add(lblUsr);
 		textField.setColumns(10);
-		textField.setBounds(48, 123, 409, 44);
+		textField.setBounds(12, 116, 409, 44);
 		
 		contentPanel.add(textField);
 		lblContrasena.setFont(new Font("Dialog", Font.BOLD, 17));
-		lblContrasena.setBounds(48, 99, 91, 23);
+		lblContrasena.setBounds(12, 92, 91, 23);
 		
 		contentPanel.add(lblContrasena);
 		
 		JButton btnIniciar = new JButton("Iniciar Sesion");
 		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 17));
-		btnIniciar.setBounds(48, 188, 186, 44);
+		btnIniciar.setBounds(12, 181, 186, 44);
 		contentPanel.add(btnIniciar);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.setFont(new Font("Dialog", Font.BOLD, 17));
-		btnRegistrarse.setBounds(271, 188, 186, 44);
+		btnRegistrarse.setBounds(235, 181, 186, 44);
 		contentPanel.add(btnRegistrarse);
 	}
 }
