@@ -45,6 +45,15 @@ public class Centro {
 			
 		}
 	}
+	
+	public void quitar_Articulo(String id,String estado,String nombre,int cantidad,String descripcion) {
+		Articulo a = new Articulo(id, estado, nombre, descripcion, cantidad);
+		try {
+			articulos.remove(a);
+		} catch (Exception e) {
+			
+		}
+	}
 }
 
 
