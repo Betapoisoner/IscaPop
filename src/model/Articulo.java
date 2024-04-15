@@ -7,7 +7,7 @@ public class Articulo {
 	private String descripcion;
 	private String nombre;
 	
-	 public Articulo(String idCentro, String id, String estado, String nombre, String descripcion, int cantidad) {
+	 public Articulo(String id, String estado, String nombre, String descripcion, int cantidad) {
 	      
 	        this.id = id;
 	        this.estado = estado;
