@@ -1,7 +1,14 @@
 package exceptions;
 
 public class ExcepcionId extends Exception {
-    public ExcepcionId(String mensaje) {
-        super(mensaje);
-    }
+ 
+	String msg;
+
+	public ExcepcionId(String msg) {
+		this.msg=msg;
+	}
+	
+	public String toString() {
+		return this.msg;
+	}
 }

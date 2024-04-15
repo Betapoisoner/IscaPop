@@ -42,7 +42,7 @@ public class Centro {
 		try {
 			articulos.add(a);
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 	}
 }
