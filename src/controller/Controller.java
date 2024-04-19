@@ -21,10 +21,10 @@ public class Controller {
 
 	public Donacion buscar_don(String idDonacion) throws ExcepcionDonacion {
 		for (Donacion donacion : donaciones) {
-			if (!donacion.getId_Donacion().equals(idDonacion)) return donacion;
+			if (!donacion.getId_Donacion().equals(idDonacion))
+				return donacion;
 		}
-		throw new ExcepcionDonacion("La doncion no se encuentra"); 
+		throw new ExcepcionDonacion("La doncion no se encuentra");
 	}
-
 
 }

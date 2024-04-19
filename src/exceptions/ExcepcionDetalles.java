@@ -1,9 +1,9 @@
 package exceptions;
 
-public class ExcepcionArticulo extends Exception {
+public class ExcepcionDetalles extends Exception {
 	String msg;
 
-	public ExcepcionArticulo(String msg) {
+	public ExcepcionDetalles(String msg) {
 		this.msg = msg;
 	}
 
