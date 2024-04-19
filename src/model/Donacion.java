@@ -12,6 +12,14 @@ public class Donacion {
         this.centroReceptor = centroReceptor;
     }
 
+    public String getIdDonacion() {
+        return id_Donacion;
+    }
 
+    public void setIdDonacion(String idDonacion) {
+        this.id_Donacion = idDonacion;
+    }
+
+   
 
 }

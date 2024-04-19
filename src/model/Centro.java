@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Centro {
 	private String id_Centro;
@@ -32,7 +33,7 @@ public class Centro {
 		this.contrasena = contrasena;
 	}
 
-	public ArrayList<Articulo> getArticulos() {
+	public List<Articulo> getArticulos() {
 		return articulos;
 	}
 
@@ -42,7 +43,7 @@ public class Centro {
 		try {
 			articulos.add(a);
 		} catch (Exception e) {
-			
+			// TODO handle Exception
 		}
 	}
 	
@@ -51,7 +52,7 @@ public class Centro {
 		try {
 			articulos.remove(a);
 		} catch (Exception e) {
-			
+			// TODO handle Exception
 		}
 	}
 }

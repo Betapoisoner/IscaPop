@@ -1,7 +1,14 @@
 package exceptions;
 
 public class ExcepcionCentro extends Exception {
-    public ExcepcionCentro(String mensaje) {
-        super(mensaje);
-    }
+	String msg;
+
+	public ExcepcionCentro(String msg) {
+		this.msg=msg;
+	}
+	
+	public String toString() {
+		return this.msg;
+	}
+
 }
