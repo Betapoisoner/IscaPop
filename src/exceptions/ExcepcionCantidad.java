@@ -1,8 +1,15 @@
 package exceptions;
 
 public class ExcepcionCantidad extends Exception {
-    public ExcepcionCantidad(String mensaje) {
-        super(mensaje);
-    }
+	String msg;
+
+	public ExcepcionCantidad(String msg) {
+		this.msg=msg;
+	}
+	
+	public String toString() {
+		return this.msg;
+	}
+
 }
 
