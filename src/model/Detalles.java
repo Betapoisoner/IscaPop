@@ -1,6 +1,7 @@
 package model;
 
 public class Detalles {
+
 	private String idArticulo;
 	private String idDonacion;
 	private String idProducto;
@@ -12,4 +13,5 @@ public class Detalles {
 		this.idProducto = idProducto;
 		this.cantidadDonacion = cantidadDonacion;
 	}
+
 }
