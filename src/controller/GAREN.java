@@ -1,5 +1,6 @@
-//No hago nada
 /*
+ * No hago nada
+ *
  * Garen, un orgulloso y noble guerrero, lucha a la cabeza de la Vanguardia
  * Valerosa. Es popular entre sus compañeros y tiene el respeto de sus enemigos;
  * no podría esperarse menos de un descendiente de la prestigiosa familia
