@@ -1,70 +1,32 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 
-import model.Articulo;
-import model.Donacion;
+import exceptions.ExcepcionDonacion;
+import model.*;
 
 public class Controller {
 
-    private List<Donacion> donaciones;
-    private List<Articulo> articulos;
+	private List<Donacion> donaciones = new ArrayList<>();
+	private List<Detalles> detalles_don = new ArrayList<>();
+	private List<Articulo> articulos = new ArrayList<>();
+	private List<Centro> centros = new ArrayList<>();
+	private List<Solicitud> solicitudes = new ArrayList<>();
 
-    public Controller() {
-        this.donaciones = new ArrayList<>();
-        this.articulos = new ArrayList<>();
-    }
+	public Controller() {
 
-    public Donacion getIdDonacion(String idDonacion) {
-        for (Donacion donacion : donaciones) {
-            if (donacion.getIdDonacion().equals(idDonacion)) {
-                return donacion;
-            }
-        }
-        return null;
-    }
+	}
 
-    public void agregarDonacion(Donacion donacion) {
-        donaciones.add(donacion);
-    }
+	public Donacion buscar_don(String idDonacion) throws ExcepcionDonacion {
+		
+		for (Donacion donacion : donaciones) {
+			if (!donacion.getId_Donacion().equals(idDonacion)) throw new ExcepcionDonacion("La doncion no se encuentra"); 	
+			else return donacion;
+		}
+		return null;
+	}
 
-    public void eliminarDonacion(Donacion donacion) {
-        Iterator<Donacion> iterator = donaciones.iterator();
-        while (iterator.hasNext()) {
-            Donacion d = iterator.next();
-            if (d.getIdDonacion().equals(donacion.getIdDonacion())) {
-                iterator.remove();
-                return;
-            }
-        }
-    }
-    
-    public void agregarArticulo(Articulo articulo) {
-        articulos.add(articulo);
-    }
 
-    public void eliminarArticulo(String idArticulo) {
-        Iterator<Articulo> iterator = articulos.iterator();
-        while (iterator.hasNext()) {
-            Articulo articulo = iterator.next();
-            if (articulo.getId().equals(idArticulo)) {
-                iterator.remove();
-                return;
-            }
-        }
-    }
-
-    public Articulo buscarArticuloPorId(String idArticulo) {
-        for (Articulo articulo : articulos) {
-            if (articulo.getId().equals(idArticulo)) {
-                return articulo;
-            }
-        }
-        return null;
-    }
-    
-    
-    
 }

@@ -14,6 +14,19 @@ public class Donacion {
         this.fecha_don = fecha_don;
     }
 
+	public String getId_Donacion() {
+		return id_Donacion;
+	}
 
+	public String getCentro_Donante() {
+		return centro_Donante;
+	}
 
+	public String getCentro_Receptor() {
+		return centro_Receptor;
+	}
+
+	public String getFecha_don() {
+		return fecha_don;
+	}
 }
