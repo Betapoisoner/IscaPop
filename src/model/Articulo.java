@@ -20,7 +20,7 @@ public class Articulo {
 
 	}
 
-	public String getId() {
+	public String getId_centro() {
 		return id;
 	}
 

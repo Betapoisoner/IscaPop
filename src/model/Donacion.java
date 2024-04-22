@@ -10,16 +10,16 @@ public class Donacion {
 	private String centro_Receptor;
 	private String fecha_don;
 	private EstadosSoli estado;
-	private List<Detalles> detalles = new ArrayList<>();
+	private List<Articulo> articulos = new ArrayList<>();
 
 	public Donacion(String id_Donacion, String centro_Donante, String centro_Receptor, String fecha_don,
-			ArrayList<Detalles> detalles) {
+			ArrayList<Articulo> articulos) {
 		this.id_Donacion = id_Donacion;
 		this.centro_Donante = centro_Donante;
 		this.centro_Receptor = centro_Receptor;
-		this.estado = estado.PENDIENTE;
+		this.estado = EstadosSoli.PENDIENTE;
 		this.fecha_don = fecha_don;
-		this.detalles.addAll(detalles);
+		this.articulos.addAll(articulos);
 	}
 
 	public String getId_Donacion() {
@@ -42,4 +42,11 @@ public class Donacion {
 		return estado.toString();
 	}
 
+	public void canviarEstadoAceptada() {
+		this.estado = EstadosSoli.ACEPTADA;
+	}
+
+	public void canviarEstadoEspera() {
+		this.estado = EstadosSoli.ESPERANDO;
+	}
 }

@@ -1,14 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solicitud {
 	private String idSolicitud;
 	private String fecha;
 	private EstadosSoli estado;
-
-	public Solicitud(String idSolicitud,String fecha) {
+	private List<Articulo> articulos = new ArrayList<>();
+	
+	public Solicitud(String idSolicitud,String fecha, ArrayList<Articulo> articulos) {
 		this.idSolicitud = idSolicitud;
 		this.fecha = fecha;
-		this.estado = estado.PENDIENTE;
+		this.estado = EstadosSoli.PENDIENTE;
+		this.articulos.addAll(articulos);
 	}
 
 	public String getIdSolicitud() {
@@ -23,4 +28,11 @@ public class Solicitud {
 		return estado.toString();
 	}
 	
+	public void canviarEstadoAceptada() {
+		this.estado =  EstadosSoli.ACEPTADA;
+	}
+	
+	public void canviarEstadoEspera() {
+		this.estado =  EstadosSoli.ESPERANDO;
+	}
 }

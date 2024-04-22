@@ -10,7 +10,6 @@ import model.*;
 public class Controller {
 
 	private List<Donacion> donaciones = new ArrayList<>();
-	private List<Articulo> articulos = new ArrayList<>();
 	private List<Centro> centros = new ArrayList<>();
 	private List<Solicitud> solicitudes = new ArrayList<>();
 
@@ -25,12 +24,6 @@ public class Controller {
 		throw new ExcepcionDonacion("La doncion no se encuentra");
 	}
 
-	public Articulo buscar_arti(String idArticulo) throws ExcepcionArticulo {
-		for (Articulo articulo : articulos)
-			if (articulo.getId().equals(idArticulo))
-				return articulo;
-		throw new ExcepcionArticulo("No se ha encontrado el articulo");
-	}
 
 	public Centro buscar_centro(String idCentro) throws ExcepcionCentro {
 		for (Centro centro : centros)
@@ -45,4 +38,5 @@ public class Controller {
 				return soli;
 		throw new ExcepcionSolicitud("No se ha enconrtado la solicitud");
 	}
+
 }
