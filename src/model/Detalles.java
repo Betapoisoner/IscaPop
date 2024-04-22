@@ -9,7 +9,19 @@ public class Detalles {
 	public Detalles(String idArticulo, String idDonacion, int cantidad) {
 		this.idArticulo = idArticulo;
 		this.idDonacion = idDonacion;
-		this.cantidadDonacion = cantidadDonacion;
+		this.cantidadDonacion = cantidad;
+	}
+
+	public String getIdArticulo() {
+		return idArticulo;
+	}
+
+	public String getIdDonacion() {
+		return idDonacion;
+	}
+
+	public int getCantidadDonacion() {
+		return cantidadDonacion;
 	}
 
 }

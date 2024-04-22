@@ -24,8 +24,21 @@ public class Articulo {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public String getEstado() {
+		return estado;
 	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
 
 }

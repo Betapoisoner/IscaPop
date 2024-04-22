@@ -1,17 +1,25 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Donacion {
 
 	private String id_Donacion;
 	private String centro_Donante;
 	private String centro_Receptor;
 	private String fecha_don;
+	private EstadosSoli estado;
+	private List<Detalles> detalles = new ArrayList<>();
 
-	public Donacion(String id_Donacion, String centro_Donante, String centro_Receptor, String fecha_don) {
+	public Donacion(String id_Donacion, String centro_Donante, String centro_Receptor, String fecha_don,
+			ArrayList<Detalles> detalles) {
 		this.id_Donacion = id_Donacion;
 		this.centro_Donante = centro_Donante;
 		this.centro_Receptor = centro_Receptor;
+		this.estado = estado.PENDIENTE;
 		this.fecha_don = fecha_don;
+		this.detalles.addAll(detalles);
 	}
 
 	public String getId_Donacion() {
@@ -29,4 +37,9 @@ public class Donacion {
 	public String getFecha_don() {
 		return fecha_don;
 	}
+
+	public String getEstado() {
+		return estado.toString();
+	}
+
 }
