@@ -38,7 +38,6 @@ public class Controller {
 				return centro;
 		throw new ExcepcionCentro("No se ha enconrtado el centro");
 	}
-	
 
 	public Solicitud buscar_soli(String idSoli) throws ExcepcionSolicitud {
 		for (Solicitud soli : solicitudes)
