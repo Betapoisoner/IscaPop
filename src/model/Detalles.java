@@ -2,22 +2,22 @@ package model;
 
 public class Detalles {
 
-	private String idArticulo;
-	private String idDonacion;
+	private Articulo articulo;
+	private Donacion donacion;
 	private int cantidadDonacion;
 
-	public Detalles(String idArticulo, String idDonacion, int cantidad) {
-		this.idArticulo = idArticulo;
-		this.idDonacion = idDonacion;
+	public Detalles(Articulo articulo,Donacion donacion, int cantidad) {
+		this.articulo = articulo;
+		this.donacion = donacion;
 		this.cantidadDonacion = cantidad;
 	}
 
 	public String getIdArticulo() {
-		return idArticulo;
+		return articulo.getId();
 	}
 
 	public String getIdDonacion() {
-		return idDonacion;
+		return donacion.getId_Donacion();
 	}
 
 	public int getCantidadDonacion() {
