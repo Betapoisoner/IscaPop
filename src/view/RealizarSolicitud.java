@@ -7,14 +7,14 @@ import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class RealizarSolicitud extends JDialog implements ActionListener {
+public class RealizarSolicitud extends JDialog {
 
   private final JPanel contentPanel = new JPanel();
-  private JTextField txtNombreArticulo, txtCantidad;
-  private JButton btnAgregarArticulo, btnRealizarSolicitud;
+  private JButton btnRealizarSolicitud;
   private JTable tableArticulos;
   private DefaultTableModel tableModel;
   private JLabel lblMensaje;
+  private JTextField textField;
 
 
   public static void main(String[] args) {
@@ -30,48 +30,15 @@ public class RealizarSolicitud extends JDialog implements ActionListener {
   
   public RealizarSolicitud() {
     setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-    setBounds(100, 100, 600, 243);
+    setBounds(100, 100, 600, 400);
     getContentPane().setLayout(new BorderLayout());
     contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
     getContentPane().add(contentPanel, BorderLayout.CENTER);
     contentPanel.setLayout(null);
 
-    // Panel de solicitud
-    JPanel panelSolicitud = new JPanel();
-    panelSolicitud.setBorder(BorderFactory.createTitledBorder("Solicitud de Donación"));
-    panelSolicitud.setBounds(12, 10, 562, 98);
-    contentPanel.add(panelSolicitud);
-    panelSolicitud.setLayout(null);
-
-    JLabel lblNombreArticulo = new JLabel("Nombre Artículo:");
-    lblNombreArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
-    lblNombreArticulo.setBounds(10, 22, 120, 14);
-    panelSolicitud.add(lblNombreArticulo);
-
-    txtNombreArticulo = new JTextField();
-    txtNombreArticulo.setBounds(140, 19, 200, 25);
-    panelSolicitud.add(txtNombreArticulo);
-    txtNombreArticulo.setColumns(10);
-
-    JLabel lblCantidad = new JLabel("Cantidad:");
-    lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
-    lblCantidad.setBounds(350, 22, 80, 14);
-    panelSolicitud.add(lblCantidad);
-
-    txtCantidad = new JTextField();
-    txtCantidad.setBounds(427, 19, 50, 25);
-    panelSolicitud.add(txtCantidad);
-    txtCantidad.setColumns(10);
-
-    btnAgregarArticulo = new JButton("Agregar Artículo");
-    btnAgregarArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
-    btnAgregarArticulo.setBounds(10, 60, 542, 25);
-    btnAgregarArticulo.addActionListener(this);
-    panelSolicitud.add(btnAgregarArticulo);
-
     // Tabla de artículos solicitados
     JScrollPane scrollPane = new JScrollPane();
-    scrollPane.setBounds(12, 119, 562, 80);
+    scrollPane.setBounds(12, 92, 562, 258);
     contentPanel.add(scrollPane);
 
     tableModel = new DefaultTableModel();
@@ -88,25 +55,37 @@ public class RealizarSolicitud extends JDialog implements ActionListener {
     btnRealizarSolicitud = new JButton("Realizar Solicitud");
     btnRealizarSolicitud.setFont(new Font("Dialog", Font.BOLD, 14));
     btnRealizarSolicitud.setEnabled(false); // Initially disabled
-    btnRealizarSolicitud.addActionListener(this);
     panelBotones.add(btnRealizarSolicitud);
 
     // Mensaje
     lblMensaje = new JLabel();
     lblMensaje.setBounds(12, 360, 188, 23);
     contentPanel.add(lblMensaje);
+    
+    JButton btnAgregarArticulo = new JButton("Agregar Artículo");
+    btnAgregarArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
+    btnAgregarArticulo.setBounds(10, 52, 220, 25);
+    contentPanel.add(btnAgregarArticulo);
+    
+    JLabel lblNombreArticulo = new JLabel("Nombre Artículo:");
+    lblNombreArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
+    lblNombreArticulo.setBounds(10, 14, 120, 14);
+    contentPanel.add(lblNombreArticulo);
+    
+    textField = new JTextField();
+    textField.setColumns(10);
+    textField.setBounds(140, 11, 200, 25);
+    contentPanel.add(textField);
+    
+    JLabel lblCantidad = new JLabel("Cantidad:");
+    lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
+    lblCantidad.setBounds(350, 14, 80, 14);
+    contentPanel.add(lblCantidad);
+    
+    JSpinner spnCantidad = new JSpinner();
+    spnCantidad.setBounds(440, 11, 135, 25);
+    contentPanel.add(spnCantidad);
   }
 
-  @Override
-  public void actionPerformed(ActionEvent e) {
-    Object source = e.getSource();
 
-    if (source == btnAgregarArticulo) {
-      // Implement logic to add article and quantity to tableModel
-      // Enable "Realizar Solicitud" button if there are entries
-    } else if (source == btnRealizarSolicitud) {
-      // Implement logic to submit donation request
-      // Clear table and disable button after submission
-    }
-  }
 }

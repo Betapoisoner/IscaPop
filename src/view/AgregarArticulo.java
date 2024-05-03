@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 
-public class AgregarArticulo extends JDialog implements ActionListener {
+public class AgregarArticulo extends JDialog {
 
     private final JPanel contentPanel = new JPanel();
     private JTextField txtNombre, txtDescripcion;
@@ -16,9 +16,6 @@ public class AgregarArticulo extends JDialog implements ActionListener {
     private JButton btnAgregar;
     private JLabel lblMensaje;
     private JTable table;
-
-    // Modelo de tabla
-    private DefaultTableModel tableModel;
 
     /**
      * Launch the application.
@@ -92,9 +89,8 @@ public class AgregarArticulo extends JDialog implements ActionListener {
         // Botón
         btnAgregar = new JButton("Agregar");
         btnAgregar.setFont(new Font("Dialog", Font.BOLD, 17));
-        btnAgregar.setBounds(14, 299, 186, 44);
-        btnAgregar.addActionListener(this); // Add listener here
-        contentPanel.add(btnAgregar);
+        btnAgregar.setBounds(14, 299, 409, 44);
+       contentPanel.add(btnAgregar);
 
         // Etiqueta de mensaje
         lblMensaje = new JLabel();
@@ -108,14 +104,9 @@ public class AgregarArticulo extends JDialog implements ActionListener {
                 new String[]{"Nombre", "Cantidad", "Estado"}
         ));
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(450, 10, 320, 333); // Ajusté la posición y el tamaño de la tabla
+        scrollPane.setBounds(454, 11, 320, 333); // Ajusté la posición y el tamaño de la tabla
         contentPanel.add(scrollPane);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // Implement action listener for "Agregar" button
-        // Call controller to add article and handle response
-        // Update table with added article
-    }
+
 }

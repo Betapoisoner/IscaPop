@@ -6,7 +6,7 @@ import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GestionarArticulos extends JDialog implements ActionListener {
+public class GestionarArticulos extends JDialog {
 
     private final JPanel contentPanel = new JPanel();
     private JTextField txtNombreBuscar;
@@ -53,7 +53,6 @@ public class GestionarArticulos extends JDialog implements ActionListener {
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Dialog", Font.BOLD, 14));
         btnBuscar.setBounds(669, 17, 83, 25);
-        btnBuscar.addActionListener(this);
         panelBuscar.add(btnBuscar);
 
         // Tabla de artículos
@@ -78,13 +77,11 @@ public class GestionarArticulos extends JDialog implements ActionListener {
         btnModificar = new JButton("Modificar");
         btnModificar.setFont(new Font("Dialog", Font.BOLD, 14));
         btnModificar.setEnabled(false); // Initially disabled
-        btnModificar.addActionListener(this);
         panelBotones.add(btnModificar);
 
         btnEliminar = new JButton("Eliminar");
         btnEliminar.setFont(new Font("Dialog", Font.BOLD, 14));
         btnEliminar.setEnabled(false); // Initially disabled
-        btnEliminar.addActionListener(this);
         panelBotones.add(btnEliminar);
 
         // Mensaje
@@ -93,10 +90,5 @@ public class GestionarArticulos extends JDialog implements ActionListener {
         contentPanel.add(lblMensaje);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object source = e.getSource();
-
-       
-    }
+   
 }

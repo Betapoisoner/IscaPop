@@ -1,19 +1,20 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-public class Registro extends JDialog {
+public class Registro extends JInternalFrame {
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
@@ -21,22 +22,24 @@ public class Registro extends JDialog {
 	private final JTextField txtContra = new JTextField();
 	private final JLabel lblContrasena = new JLabel("Contraseña");
 	private JTextField txtNombre;
-
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		try {
-			Registro dialog = new Registro();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Registro frame = new Registro();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	/**
-	 * Create the dialog.
+	 * Create the frame.
 	 */
 	public Registro() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -88,4 +91,5 @@ public class Registro extends JDialog {
 		txtNombre.setBounds(12, 195, 409, 44);
 		contentPanel.add(txtNombre);
 	}
+
 }

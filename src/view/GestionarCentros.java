@@ -7,11 +7,12 @@ import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GestionarCentros extends JDialog implements ActionListener {
+public class GestionarCentros extends JDialog {
 
-  private final JPanel contentPanel = new JPanel();
+	private static final long serialVersionUID = 1L;
+private final JPanel contentPanel = new JPanel();
   private JTextField txtIdBuscar;
-  private JButton btnBuscar, btnModificar, btnEliminar;
+  private JButton btnBuscar;
   private JTable tableCentros;
   private DefaultTableModel tableModel;
   private JLabel lblMensaje;
@@ -30,7 +31,7 @@ public class GestionarCentros extends JDialog implements ActionListener {
 
   public GestionarCentros() {
     setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-    setBounds(100, 100, 600, 400);
+    setBounds(100, 100, 600, 373);
     getContentPane().setLayout(new BorderLayout());
     contentPanel.setBackground(new Color(255, 255, 255));
     contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -57,7 +58,6 @@ public class GestionarCentros extends JDialog implements ActionListener {
     btnBuscar = new JButton("Buscar");
     btnBuscar.setFont(new Font("Dialog", Font.BOLD, 14));
     btnBuscar.setBounds(469, 15, 83, 25);
-    btnBuscar.addActionListener(this);
     panelBuscar.add(btnBuscar);
 
     // Tabla de centros
@@ -72,44 +72,11 @@ public class GestionarCentros extends JDialog implements ActionListener {
     tableCentros = new JTable(tableModel);
     scrollPane.setViewportView(tableCentros);
 
-    // Panel de botones
-    JPanel panelBotones = new JPanel();
-    panelBotones.setBounds(200, 330, 200, 40);
-    contentPanel.add(panelBotones);
-
-    btnModificar = new JButton("Modificar");
-    btnModificar.setFont(new Font("Dialog", Font.BOLD, 14));
-    btnModificar.setEnabled(false); // Initially disabled
-    btnModificar.addActionListener(this);
-    panelBotones.add(btnModificar);
-
-    btnEliminar = new JButton("Eliminar");
-    btnEliminar.setFont(new Font("Dialog", Font.BOLD, 14));
-    btnEliminar.setEnabled(false); // Initially disabled
-    btnEliminar.addActionListener(this);
-    panelBotones.add(btnEliminar);
-
     // Mensaje
     lblMensaje = new JLabel();
     lblMensaje.setBounds(12, 330, 188, 23);
     contentPanel.add(lblMensaje);
   }
 
-  @Override
-  public void actionPerformed(ActionEvent e) {
-    Object source = e.getSource();
-
-    if (source == btnBuscar) {
-      // Implement search logic based on txtIdBuscar.getText()
-      // Update tableModel with search results
-      // Enable buttons if centers are found, disable otherwise
-    } else if (source == btnModificar) {
-      // Implement logic to get selected center data from table
-      // Open a new window or dialog to modify center details
-    } else if (source == btnEliminar) {
-      // Implement logic to get selected center ID
-      // Confirm deletion with user
-      // If confirmed, remove center from tableModel
-    }
-  }
+ 
 }
