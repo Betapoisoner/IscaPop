@@ -51,7 +51,7 @@ public class Registro extends JDialog {
 		contentPanel.add(txtUsr);
 		txtUsr.setColumns(10);
 
-		JLabel lblUsr = new JLabel("Usuario");
+		JLabel lblUsr = new JLabel("Centro");
 		lblUsr.setFont(new Font("Dialog", Font.BOLD, 17));
 		lblUsr.setBounds(12, 12, 91, 23);
 		contentPanel.add(lblUsr);
@@ -60,7 +60,7 @@ public class Registro extends JDialog {
 
 		contentPanel.add(txtContra);
 		lblContrasena.setFont(new Font("Dialog", Font.BOLD, 17));
-		lblContrasena.setBounds(12, 92, 91, 23);
+		lblContrasena.setBounds(12, 92, 161, 23);
 
 		contentPanel.add(lblContrasena);
 
