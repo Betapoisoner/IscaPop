@@ -59,6 +59,8 @@ public class Controller {
 		if (c!=null) throw new ExcepcionCentro("El centro ya esta registrado");
 		else {
 			c = new Centro(usuario, nombre, contrasena);
+			centros.add(c);
+			return c;
 		}
 	}
 	
