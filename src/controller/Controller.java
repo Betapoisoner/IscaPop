@@ -30,7 +30,7 @@ public class Controller {
 				return centro;
 		throw new ExcepcionCentro("No se ha encontrado el centro");
 	}
-	
+
 	public Centro buscar_centro_no_ex(String idCentro) {
 		for (Centro centro : centros)
 			if (centro.getId_Centro().equals(idCentro))
@@ -53,17 +53,19 @@ public class Controller {
 			return c;
 		}
 	}
-	
-	public Centro registro(String usuario, String contrasena,String nombre) throws ExcepcionCentro {
+
+	public Centro registro(String usuario, String contrasena, String nombre) throws ExcepcionCentro {
 		Centro c = buscar_centro_no_ex(usuario);
-		if (c!=null) throw new ExcepcionCentro("El centro ya esta registrado");
+		if (c != null)
+			throw new ExcepcionCentro("El centro ya esta registrado");
 		else {
 			c = new Centro(usuario, nombre, contrasena);
+<<<<<<< Updated upstream
 			centros.add(c);
+=======
+>>>>>>> Stashed changes
 			return c;
 		}
 	}
-	
-	
 
 }
