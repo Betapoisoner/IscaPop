@@ -36,29 +36,29 @@ public class GestionarArticulos extends JDialog implements ActionListener {
         // Panel de búsqueda
         JPanel panelBuscar = new JPanel();
         panelBuscar.setBorder(BorderFactory.createTitledBorder("Buscar Artículo"));
-        panelBuscar.setBounds(12, 12, 450, 80);
+        panelBuscar.setBounds(12, 12, 762, 57);
         contentPanel.add(panelBuscar);
         panelBuscar.setLayout(null);
 
         JLabel lblNombre = new JLabel("Nombre:");
         lblNombre.setFont(new Font("Dialog", Font.BOLD, 14));
-        lblNombre.setBounds(10, 20, 89, 14);
+        lblNombre.setBounds(10, 16, 119, 26);
         panelBuscar.add(lblNombre);
 
         txtNombreBuscar = new JTextField();
-        txtNombreBuscar.setBounds(125, 17, 193, 25);
+        txtNombreBuscar.setBounds(139, 19, 516, 25);
         panelBuscar.add(txtNombreBuscar);
         txtNombreBuscar.setColumns(10);
 
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnBuscar.setBounds(342, 15, 83, 25);
+        btnBuscar.setBounds(669, 17, 83, 25);
         btnBuscar.addActionListener(this);
         panelBuscar.add(btnBuscar);
 
         // Tabla de artículos
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(12, 103, 762, 320);
+        scrollPane.setBounds(12, 80, 762, 320);
         contentPanel.add(scrollPane);
 
         tableModel = new DefaultTableModel();
@@ -72,7 +72,7 @@ public class GestionarArticulos extends JDialog implements ActionListener {
 
         // Panel de botones
         JPanel panelBotones = new JPanel();
-        panelBotones.setBounds(500, 430, 274, 40);
+        panelBotones.setBounds(242, 411, 274, 40);
         contentPanel.add(panelBotones);
 
         btnModificar = new JButton("Modificar");

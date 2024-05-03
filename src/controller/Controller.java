@@ -60,10 +60,7 @@ public class Controller {
 			throw new ExcepcionCentro("El centro ya esta registrado");
 		else {
 			c = new Centro(usuario, nombre, contrasena);
-<<<<<<< Updated upstream
 			centros.add(c);
-=======
->>>>>>> Stashed changes
 			return c;
 		}
 	}

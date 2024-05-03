@@ -30,7 +30,7 @@ public class RealizarSolicitud extends JDialog implements ActionListener {
   
   public RealizarSolicitud() {
     setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-    setBounds(100, 100, 600, 400);
+    setBounds(100, 100, 600, 243);
     getContentPane().setLayout(new BorderLayout());
     contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
     getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -39,39 +39,39 @@ public class RealizarSolicitud extends JDialog implements ActionListener {
     // Panel de solicitud
     JPanel panelSolicitud = new JPanel();
     panelSolicitud.setBorder(BorderFactory.createTitledBorder("Solicitud de Donación"));
-    panelSolicitud.setBounds(12, 10, 562, 250);
+    panelSolicitud.setBounds(12, 10, 562, 98);
     contentPanel.add(panelSolicitud);
     panelSolicitud.setLayout(null);
 
     JLabel lblNombreArticulo = new JLabel("Nombre Artículo:");
     lblNombreArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
-    lblNombreArticulo.setBounds(10, 55, 120, 14);
+    lblNombreArticulo.setBounds(10, 22, 120, 14);
     panelSolicitud.add(lblNombreArticulo);
 
     txtNombreArticulo = new JTextField();
-    txtNombreArticulo.setBounds(140, 52, 200, 25);
+    txtNombreArticulo.setBounds(140, 19, 200, 25);
     panelSolicitud.add(txtNombreArticulo);
     txtNombreArticulo.setColumns(10);
 
     JLabel lblCantidad = new JLabel("Cantidad:");
     lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
-    lblCantidad.setBounds(361, 55, 80, 14);
+    lblCantidad.setBounds(350, 22, 80, 14);
     panelSolicitud.add(lblCantidad);
 
     txtCantidad = new JTextField();
-    txtCantidad.setBounds(451, 52, 50, 25);
+    txtCantidad.setBounds(427, 19, 50, 25);
     panelSolicitud.add(txtCantidad);
     txtCantidad.setColumns(10);
 
     btnAgregarArticulo = new JButton("Agregar Artículo");
     btnAgregarArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
-    btnAgregarArticulo.setBounds(140, 90, 200, 25);
+    btnAgregarArticulo.setBounds(10, 60, 542, 25);
     btnAgregarArticulo.addActionListener(this);
     panelSolicitud.add(btnAgregarArticulo);
 
     // Tabla de artículos solicitados
     JScrollPane scrollPane = new JScrollPane();
-    scrollPane.setBounds(12, 270, 562, 80);
+    scrollPane.setBounds(12, 119, 562, 80);
     contentPanel.add(scrollPane);
 
     tableModel = new DefaultTableModel();

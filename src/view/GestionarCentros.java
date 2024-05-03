@@ -40,7 +40,7 @@ public class GestionarCentros extends JDialog implements ActionListener {
     // Panel de búsqueda
     JPanel panelBuscar = new JPanel();
     panelBuscar.setBorder(BorderFactory.createTitledBorder("Buscar Centro"));
-    panelBuscar.setBounds(12, 12, 450, 80);
+    panelBuscar.setBounds(12, 12, 562, 56);
     contentPanel.add(panelBuscar);
     panelBuscar.setLayout(null);
 
@@ -50,19 +50,19 @@ public class GestionarCentros extends JDialog implements ActionListener {
     panelBuscar.add(lblId);
 
     txtIdBuscar = new JTextField();
-    txtIdBuscar.setBounds(109, 17, 193, 25);
+    txtIdBuscar.setBounds(109, 17, 350, 25);
     panelBuscar.add(txtIdBuscar);
     txtIdBuscar.setColumns(10);
 
     btnBuscar = new JButton("Buscar");
     btnBuscar.setFont(new Font("Dialog", Font.BOLD, 14));
-    btnBuscar.setBounds(320, 15, 83, 25);
+    btnBuscar.setBounds(469, 15, 83, 25);
     btnBuscar.addActionListener(this);
     panelBuscar.add(btnBuscar);
 
     // Tabla de centros
     JScrollPane scrollPane = new JScrollPane();
-    scrollPane.setBounds(12, 103, 562, 220);
+    scrollPane.setBounds(12, 79, 562, 244);
     contentPanel.add(scrollPane);
 
     tableModel = new DefaultTableModel();
