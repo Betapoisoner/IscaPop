@@ -1,22 +1,24 @@
 package view;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import java.awt.*;
-import java.awt.event.*;
+public class MenuPrincipal extends JInternalFrame {
 
-public class Menu extends JFrame {
-
+	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private DefaultTableModel tableModel;
 
-	public Menu() {
+	public MenuPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Menú Principal");
 		setSize(800, 600); 
-		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 
 
@@ -55,10 +57,4 @@ public class Menu extends JFrame {
 		tableModel.addRow(new Object[] { nombre, cantidad, estado });
 	}
 
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(() -> {
-			Menu menu = new Menu();
-			menu.setVisible(true);
-		});
-	}
 }

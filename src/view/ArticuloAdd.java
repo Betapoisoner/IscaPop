@@ -1,15 +1,29 @@
 package view;
 
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import java.awt.*;
-import java.awt.event.*;
+public class ArticuloAdd extends JInternalFrame {
 
-public class AgregarArticulo extends JDialog {
-
-    private final JPanel contentPanel = new JPanel();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
     private JTextField txtNombre, txtDescripcion;
     private JSpinner spnCantidad;
     private JComboBox<String> cbEstado;
@@ -22,7 +36,7 @@ public class AgregarArticulo extends JDialog {
      */
     public static void main(String[] args) {
         try {
-            AgregarArticulo dialog = new AgregarArticulo(null);
+        	ArticuloAdd dialog = new ArticuloAdd();
             dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             dialog.setVisible(true);
         } catch (Exception e) {
@@ -34,7 +48,7 @@ public class AgregarArticulo extends JDialog {
      * Create the dialog.
      */
 
-    public AgregarArticulo(JFrame parentFrame) { // Assuming you have a parent frame
+    public ArticuloAdd() { // Assuming you have a parent frame
 
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 800, 411); // Aumenté el tamaño de la ventana
@@ -107,6 +121,5 @@ public class AgregarArticulo extends JDialog {
         scrollPane.setBounds(454, 11, 320, 333); // Ajusté la posición y el tamaño de la tabla
         contentPanel.add(scrollPane);
     }
-
 
 }

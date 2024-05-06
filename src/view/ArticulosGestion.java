@@ -1,14 +1,28 @@
 package view;
 
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 
-public class GestionarArticulos extends JDialog {
+public class ArticulosGestion extends JInternalFrame {
 
-    private final JPanel contentPanel = new JPanel();
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
     private JTextField txtNombreBuscar;
     private JButton btnBuscar, btnModificar, btnEliminar;
     private JTable tableArticulos;
@@ -17,7 +31,7 @@ public class GestionarArticulos extends JDialog {
 
     public static void main(String[] args) {
         try {
-            GestionarArticulos dialog = new GestionarArticulos();
+        	ArticulosGestion dialog = new ArticulosGestion();
             dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             dialog.setVisible(true);
         } catch (Exception e) {
@@ -25,7 +39,7 @@ public class GestionarArticulos extends JDialog {
         }
     }
 
-    public GestionarArticulos() {
+    public ArticulosGestion() {
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 800, 500);
         getContentPane().setLayout(new BorderLayout());
@@ -90,5 +104,4 @@ public class GestionarArticulos extends JDialog {
         contentPanel.add(lblMensaje);
     }
 
-   
 }
