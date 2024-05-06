@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JInternalFrame;
 
-public class MenuPrincipal extends JInternalFrame {
+public class MenuSolicitudes extends JInternalFrame {
 
 	private static final long serialVersionUID = 1L;
 
@@ -15,7 +15,7 @@ public class MenuPrincipal extends JInternalFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MenuPrincipal frame = new MenuPrincipal();
+					MenuSolicitudes frame = new MenuSolicitudes();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class MenuPrincipal extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MenuPrincipal() {
+	public MenuSolicitudes() {
 		setBounds(100, 100, 450, 300);
 
 	}

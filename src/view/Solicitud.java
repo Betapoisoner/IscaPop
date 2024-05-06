@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -43,6 +42,7 @@ public class Solicitud extends JInternalFrame {
 
 	  
 	  public Solicitud() {
+	  	setTitle("Solicitud");
 	    setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 	    setBounds(100, 100, 600, 400);
 	    getContentPane().setLayout(new BorderLayout());

@@ -35,6 +35,7 @@ public class InicioSesion extends JDialog {
 	 * Create the dialog.
 	 */
 	public InicioSesion() {
+		setTitle("Inicio Sesion");
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 277);
 		getContentPane().setLayout(new BorderLayout());

@@ -40,6 +40,7 @@ private final JPanel contentPanel = new JPanel();
 
 
   public CentrosGestion() {
+  	setTitle("Centros");
     setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
     setBounds(100, 100, 600, 373);
     getContentPane().setLayout(new BorderLayout());
@@ -55,13 +56,13 @@ private final JPanel contentPanel = new JPanel();
     contentPanel.add(panelBuscar);
     panelBuscar.setLayout(null);
 
-    JLabel lblId = new JLabel("ID Centro:");
-    lblId.setFont(new Font("Dialog", Font.BOLD, 14));
-    lblId.setBounds(10, 20, 89, 14);
-    panelBuscar.add(lblId);
+    JLabel lblCentro = new JLabel("Nombre Centro:");
+    lblCentro.setFont(new Font("Dialog", Font.BOLD, 14));
+    lblCentro.setBounds(10, 20, 122, 14);
+    panelBuscar.add(lblCentro);
 
     txtIdBuscar = new JTextField();
-    txtIdBuscar.setBounds(109, 17, 350, 25);
+    txtIdBuscar.setBounds(127, 17, 332, 25);
     panelBuscar.add(txtIdBuscar);
     txtIdBuscar.setColumns(10);
 
@@ -72,7 +73,7 @@ private final JPanel contentPanel = new JPanel();
 
     // Tabla de centros
     JScrollPane scrollPane = new JScrollPane();
-    scrollPane.setBounds(12, 79, 562, 244);
+    scrollPane.setBounds(12, 75, 562, 244);
     contentPanel.add(scrollPane);
 
     tableModel = new DefaultTableModel();

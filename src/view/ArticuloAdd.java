@@ -28,7 +28,6 @@ public class ArticuloAdd extends JInternalFrame {
     private JSpinner spnCantidad;
     private JComboBox<String> cbEstado;
     private JButton btnAgregar;
-    private JLabel lblMensaje;
     private JTable table;
 
     /**
@@ -48,10 +47,11 @@ public class ArticuloAdd extends JInternalFrame {
      * Create the dialog.
      */
 
-    public ArticuloAdd() { // Assuming you have a parent frame
+    public ArticuloAdd() {
+    	setTitle("Articulos"); // Assuming you have a parent frame
 
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 800, 411); // Aumenté el tamaño de la ventana
+        setBounds(100, 100, 800, 389); // Aumenté el tamaño de la ventana
         getContentPane().setLayout(new BorderLayout());
         contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
         getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -105,11 +105,6 @@ public class ArticuloAdd extends JInternalFrame {
         btnAgregar.setFont(new Font("Dialog", Font.BOLD, 17));
         btnAgregar.setBounds(14, 299, 409, 44);
        contentPanel.add(btnAgregar);
-
-        // Etiqueta de mensaje
-        lblMensaje = new JLabel();
-        lblMensaje.setBounds(12, 232, 409, 23);
-        contentPanel.add(lblMensaje);
 
         // Tabla para mostrar los artículos agregados
         table = new JTable();

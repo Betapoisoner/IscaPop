@@ -24,7 +24,7 @@ public class ArticulosGestion extends JInternalFrame {
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
     private JTextField txtNombreBuscar;
-    private JButton btnBuscar, btnModificar, btnEliminar;
+    private JButton btnBuscar;
     private JTable tableArticulos;
     private DefaultTableModel tableModel;
     private JLabel lblMensaje;
@@ -40,8 +40,9 @@ public class ArticulosGestion extends JInternalFrame {
     }
 
     public ArticulosGestion() {
+    	setTitle("Articulos");
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 800, 500);
+        setBounds(100, 100, 800, 443);
         getContentPane().setLayout(new BorderLayout());
         contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
         getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -60,7 +61,7 @@ public class ArticulosGestion extends JInternalFrame {
         panelBuscar.add(lblNombre);
 
         txtNombreBuscar = new JTextField();
-        txtNombreBuscar.setBounds(139, 19, 516, 25);
+        txtNombreBuscar.setBounds(77, 19, 578, 25);
         panelBuscar.add(txtNombreBuscar);
         txtNombreBuscar.setColumns(10);
 
@@ -82,21 +83,6 @@ public class ArticulosGestion extends JInternalFrame {
         tableModel.addColumn("Estado");
         tableArticulos = new JTable(tableModel);
         scrollPane.setViewportView(tableArticulos);
-
-        // Panel de botones
-        JPanel panelBotones = new JPanel();
-        panelBotones.setBounds(242, 411, 274, 40);
-        contentPanel.add(panelBotones);
-
-        btnModificar = new JButton("Modificar");
-        btnModificar.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnModificar.setEnabled(false); // Initially disabled
-        panelBotones.add(btnModificar);
-
-        btnEliminar = new JButton("Eliminar");
-        btnEliminar.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnEliminar.setEnabled(false); // Initially disabled
-        panelBotones.add(btnEliminar);
 
         // Mensaje
         lblMensaje = new JLabel();

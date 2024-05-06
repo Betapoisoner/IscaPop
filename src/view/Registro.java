@@ -42,6 +42,7 @@ public class Registro extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public Registro() {
+		setTitle("Registro");
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 346);
 		getContentPane().setLayout(new BorderLayout());
