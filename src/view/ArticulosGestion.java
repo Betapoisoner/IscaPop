@@ -27,7 +27,8 @@ public class ArticulosGestion extends JInternalFrame {
     private JButton btnBuscar;
     private JTable tableArticulos;
     private DefaultTableModel tableModel;
-    private JLabel lblMensaje;
+    private JButton btnModificar;
+    private JButton btnEliminar;
 
     public static void main(String[] args) {
         try {
@@ -42,16 +43,15 @@ public class ArticulosGestion extends JInternalFrame {
     public ArticulosGestion() {
     	setTitle("Articulos");
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 800, 443);
+        setBounds(100, 100, 800, 487);
         getContentPane().setLayout(new BorderLayout());
         contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
         getContentPane().add(contentPanel, BorderLayout.CENTER);
         contentPanel.setLayout(null);
 
-        // Panel de búsqueda
         JPanel panelBuscar = new JPanel();
         panelBuscar.setBorder(BorderFactory.createTitledBorder("Buscar Artículo"));
-        panelBuscar.setBounds(12, 12, 762, 57);
+        panelBuscar.setBounds(11, 12, 762, 57);
         contentPanel.add(panelBuscar);
         panelBuscar.setLayout(null);
 
@@ -70,9 +70,8 @@ public class ArticulosGestion extends JInternalFrame {
         btnBuscar.setBounds(669, 17, 83, 25);
         panelBuscar.add(btnBuscar);
 
-        // Tabla de artículos
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(12, 80, 762, 320);
+        scrollPane.setBounds(11, 80, 762, 320);
         contentPanel.add(scrollPane);
 
         tableModel = new DefaultTableModel();
@@ -83,11 +82,14 @@ public class ArticulosGestion extends JInternalFrame {
         tableModel.addColumn("Estado");
         tableArticulos = new JTable(tableModel);
         scrollPane.setViewportView(tableArticulos);
-
-        // Mensaje
-        lblMensaje = new JLabel();
-        lblMensaje.setBounds(12, 430, 478, 23);
-        contentPanel.add(lblMensaje);
+        
+        btnModificar = new JButton("Modificar");
+        btnModificar.setBounds(18, 411, 364, 35);
+        contentPanel.add(btnModificar);
+        
+        btnEliminar = new JButton("Eliminar");
+        btnEliminar.setBounds(400, 411, 364, 35);
+        contentPanel.add(btnEliminar);
     }
 
 }

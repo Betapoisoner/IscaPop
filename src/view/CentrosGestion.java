@@ -49,7 +49,6 @@ private final JPanel contentPanel = new JPanel();
     getContentPane().add(contentPanel, BorderLayout.CENTER);
     contentPanel.setLayout(null);
 
-    // Panel de búsqueda
     JPanel panelBuscar = new JPanel();
     panelBuscar.setBorder(BorderFactory.createTitledBorder("Buscar Centro"));
     panelBuscar.setBounds(12, 12, 562, 56);
@@ -71,7 +70,6 @@ private final JPanel contentPanel = new JPanel();
     btnBuscar.setBounds(469, 15, 83, 25);
     panelBuscar.add(btnBuscar);
 
-    // Tabla de centros
     JScrollPane scrollPane = new JScrollPane();
     scrollPane.setBounds(12, 75, 562, 244);
     contentPanel.add(scrollPane);
@@ -83,7 +81,6 @@ private final JPanel contentPanel = new JPanel();
     tableCentros = new JTable(tableModel);
     scrollPane.setViewportView(tableCentros);
 
-    // Mensaje
     lblMensaje = new JLabel();
     lblMensaje.setBounds(12, 330, 188, 23);
     contentPanel.add(lblMensaje);

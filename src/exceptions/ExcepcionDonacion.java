@@ -1,6 +1,10 @@
 package exceptions;
 
 public class ExcepcionDonacion extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String msg;
 
 	public ExcepcionDonacion(String msg) {
