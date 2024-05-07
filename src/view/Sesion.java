@@ -1,40 +1,47 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-public class InicioSesion extends JDialog {
+public class Sesion extends JInternalFrame {
 
-	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtUsr;
 	private final JTextField textField = new JTextField();
 	private final JLabel lblContrasena = new JLabel("Contraseña");
 
+	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		try {
-			InicioSesion dialog = new InicioSesion();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Sesion frame = new Sesion();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	/**
-	 * Create the dialog.
+	 * Create the frame.
 	 */
-	public InicioSesion() {
+	public Sesion() {
 		setTitle("Inicio Sesion");
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 277);
@@ -71,4 +78,5 @@ public class InicioSesion extends JDialog {
 		btnRegistrarse.setBounds(235, 181, 186, 44);
 		contentPanel.add(btnRegistrarse);
 	}
+
 }

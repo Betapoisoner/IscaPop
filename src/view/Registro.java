@@ -1,18 +1,24 @@
 package view;
 
+import controller.*;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.sound.midi.ControllerEventListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import controller.Controller;
+import exceptions.ExcepcionCentro;
 
 public class Registro extends JInternalFrame {
 
@@ -68,7 +74,11 @@ public class Registro extends JInternalFrame {
 
 		contentPanel.add(lblContrasena);
 
-		JButton btnIniciar = new JButton("Iniciar Sesion");
+		JButton btnIniciar = new JButton("Atras");
+		btnIniciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 17));
 		btnIniciar.setBounds(12, 250, 186, 44);
 		contentPanel.add(btnIniciar);
@@ -76,6 +86,18 @@ public class Registro extends JInternalFrame {
 		JButton btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String usuario = txtUsr.getText();
+				String nombre = txtNombre.getText();
+				String contra = txtContra.getText();
+				
+				try {
+					Controller.registro(usuario, contra, nombre);
+					txtContra.setText(null);
+					txtNombre.setText(null);
+					txtContra.setText(null);
+				} catch (ExcepcionCentro e1) {
+					JOptionPane.showInternalMessageDialog(null, e,"ERROR", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		btnRegistrarse.setFont(new Font("Dialog", Font.BOLD, 17));
