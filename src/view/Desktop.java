@@ -47,14 +47,12 @@ public class Desktop {
 		escritorio.setBounds(0, 0, 1173, 813);
 		frame.getContentPane().add(escritorio);
 		
-		frame.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowOpened(WindowEvent e) {
+		
 				Sesion inicio = new Sesion();
 				escritorio.add(inicio);
 				inicio.setLocation(((escritorio.getWidth()-inicio.getWidth())/2),((escritorio.getHeight() -inicio.getHeight())/2));
 				inicio.show();
-			}
-		});
+		
+	
 	}
 }
