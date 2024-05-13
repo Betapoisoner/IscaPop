@@ -21,7 +21,6 @@ public class Sesion extends JInternalFrame {
 	private final JTextField textField = new JTextField();
 	private final JLabel lblContrasena = new JLabel("Contraseña");
 
-	
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -75,7 +74,7 @@ public class Sesion extends JInternalFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
-			
+
 		});
 		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 17));
 		btnIniciar.setBounds(12, 181, 186, 44);

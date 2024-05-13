@@ -64,5 +64,24 @@ public class Controller {
 			return c;
 		}
 	}
+	
+	public static void añadirArticulo(String idCentro, String estado, String nombre, int cantidad, String descripcion) throws ExcepcionArticulo {
+        Centro c = buscar_centro_no_ex(idCentro);
+        if (c != null) {
+            c.add_Articulo(crearCodigoArticulo(), estado, nombre, cantidad, descripcion);
+        } else {
+            throw new ExcepcionArticulo("No se puede agregar el artículo. El centro no existe.");
+        }
+    }
+    
+    public static String crearCodigoArticulo() {
+     
+        int numAleatorio = (int) (Math.random() * 900000) + 100000;
+     
+        return String.valueOf(numAleatorio);
+    }
+    
+
+    
 
 }

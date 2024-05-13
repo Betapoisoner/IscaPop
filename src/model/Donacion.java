@@ -49,7 +49,7 @@ public class Donacion {
 	public void canviarEstadoEspera() {
 		this.estado = EstadosSoli.ESPERANDO;
 	}
-	
+
 	public void add_Articulo(String id, String estado, String nombre, int cantidad, String descripcion) {
 		Articulo a = new Articulo(id, estado, nombre, descripcion, cantidad);
 		try {

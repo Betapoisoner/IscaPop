@@ -16,8 +16,8 @@ public class MenuSolicitudes extends JInternalFrame {
 	private DefaultTableModel tableModel;
 
 	public MenuSolicitudes() {
-		setTitle("Menú Articulos");
-		setSize(800, 291); 
+		setTitle("Menú Solicitudes");
+		setSize(800, 291);
 		getContentPane().setLayout(null);
 
 		tableModel = new DefaultTableModel(new Object[][] {}, new String[] { "Nombre", "Cantidad", "Estado" });
@@ -25,22 +25,10 @@ public class MenuSolicitudes extends JInternalFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(183, 0, 601, 261);
 		getContentPane().add(scrollPane);
-		
+
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(31, 177, 123, 66);
+		btnSalir.setBounds(28, 66, 123, 66);
 		getContentPane().add(btnSalir);
-		
-		JButton btnGestionarArticulos = new JButton("Gestionar Artículos");
-		btnGestionarArticulos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnGestionarArticulos.setBounds(31, 15, 123, 66);
-		getContentPane().add(btnGestionarArticulos);
-		
-		JButton btnAgregarArticulo = new JButton("Agregar Artículo");
-		btnAgregarArticulo.setBounds(31, 96, 123, 66);
-		getContentPane().add(btnAgregarArticulo);
 	}
 
 	public void agregarArticulo(String nombre, int cantidad, String estado) {

@@ -28,6 +28,7 @@ public class Registro extends JInternalFrame {
 	private final JTextField txtContra = new JTextField();
 	private final JLabel lblContrasena = new JLabel("Contraseña");
 	private JTextField txtNombre;
+
 	/**
 	 * Launch the application.
 	 */
@@ -89,15 +90,15 @@ public class Registro extends JInternalFrame {
 				String usuario = txtUsr.getText();
 				String nombre = txtNombre.getText();
 				String contra = txtContra.getText();
-				
+
 				try {
 					Controller.registro(usuario, contra, nombre);
 					txtContra.setText(null);
 					txtNombre.setText(null);
 					txtContra.setText(null);
-					
+
 				} catch (ExcepcionCentro e1) {
-					JOptionPane.showInternalMessageDialog(null, e,"ERROR", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showInternalMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

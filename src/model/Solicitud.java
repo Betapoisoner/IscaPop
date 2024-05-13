@@ -8,8 +8,8 @@ public class Solicitud {
 	private String fecha;
 	private EstadosSoli estado;
 	private List<Articulo> articulos = new ArrayList<>();
-	
-	public Solicitud(String idSolicitud,String fecha, ArrayList<Articulo> articulos) {
+
+	public Solicitud(String idSolicitud, String fecha, ArrayList<Articulo> articulos) {
 		this.idSolicitud = idSolicitud;
 		this.fecha = fecha;
 		this.estado = EstadosSoli.PENDIENTE;
@@ -27,12 +27,12 @@ public class Solicitud {
 	public String getEstado() {
 		return estado.toString();
 	}
-	
+
 	public void canviarEstadoAceptada() {
-		this.estado =  EstadosSoli.ACEPTADA;
+		this.estado = EstadosSoli.ACEPTADA;
 	}
-	
+
 	public void canviarEstadoEspera() {
-		this.estado =  EstadosSoli.ESPERANDO;
+		this.estado = EstadosSoli.ESPERANDO;
 	}
 }
