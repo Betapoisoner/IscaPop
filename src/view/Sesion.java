@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Sesion extends JInternalFrame {
 
@@ -69,6 +71,12 @@ public class Sesion extends JInternalFrame {
 		contentPanel.add(lblContrasena);
 
 		JButton btnIniciar = new JButton("Iniciar Sesion");
+		btnIniciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+			
+		});
 		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 17));
 		btnIniciar.setBounds(12, 181, 186, 44);
 		contentPanel.add(btnIniciar);

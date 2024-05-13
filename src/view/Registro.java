@@ -95,6 +95,7 @@ public class Registro extends JInternalFrame {
 					txtContra.setText(null);
 					txtNombre.setText(null);
 					txtContra.setText(null);
+					
 				} catch (ExcepcionCentro e1) {
 					JOptionPane.showInternalMessageDialog(null, e,"ERROR", JOptionPane.ERROR_MESSAGE);
 				}
