@@ -78,6 +78,7 @@ public class Registro extends JInternalFrame {
 		JButton btnIniciar = new JButton("Atras");
 		btnIniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 			}
 		});
 		btnIniciar.setFont(new Font("Dialog", Font.BOLD, 17));

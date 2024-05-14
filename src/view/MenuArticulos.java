@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,6 +30,24 @@ public class MenuArticulos extends JInternalFrame {
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.setBounds(23, 86, 123, 66);
 		getContentPane().add(btnSalir);
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose(); // Cierra la ventana al hacer clic en el botón "Salir"
+			}
+		});
+
+		JButton btnGestionarArticulos = new JButton("Gestionar Artículos");
+		btnGestionarArticulos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnGestionarArticulos.setBounds(31, 15, 123, 66);
+		getContentPane().add(btnGestionarArticulos);
+
+		JButton btnAgregarArticulo = new JButton("Agregar Artículo");
+		btnAgregarArticulo.setBounds(31, 96, 123, 66);
+		getContentPane().add(btnAgregarArticulo);
+
 	}
 
 	public void agregarArticulo(String nombre, int cantidad, String estado) {
