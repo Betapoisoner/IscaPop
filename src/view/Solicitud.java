@@ -50,7 +50,7 @@ public class Solicitud extends JInternalFrame {
         contentPanel.setLayout(null);
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(11, 52, 562, 258);
+        scrollPane.setBounds(21, 52, 562, 258);
         contentPanel.add(scrollPane);
 
         tableModel = new DefaultTableModel();
@@ -61,21 +61,21 @@ public class Solicitud extends JInternalFrame {
 
         JLabel lblNombreArticulo = new JLabel("Nombre Artículo:");
         lblNombreArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
-        lblNombreArticulo.setBounds(12, 17, 120, 14);
+        lblNombreArticulo.setBounds(13, 17, 120, 14);
         contentPanel.add(lblNombreArticulo);
 
         textField = new JTextField();
         textField.setColumns(10);
-        textField.setBounds(140, 11, 200, 30);
+        textField.setBounds(146, 11, 200, 30);
         contentPanel.add(textField);
 
         JLabel lblCantidad = new JLabel("Cantidad:");
         lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
-        lblCantidad.setBounds(350, 17, 80, 14);
+        lblCantidad.setBounds(359, 17, 80, 14);
         contentPanel.add(lblCantidad);
 
         JSpinner spnCantidad = new JSpinner();
-        spnCantidad.setBounds(440, 11, 135, 30);
+        spnCantidad.setBounds(452, 11, 135, 30);
         contentPanel.add(spnCantidad);
 
         JButton btnAgregarArticulo = new JButton("Agregar Artículo");
@@ -84,7 +84,7 @@ public class Solicitud extends JInternalFrame {
             }
         });
         btnAgregarArticulo.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnAgregarArticulo.setBounds(21, 321, 269, 38);
+        btnAgregarArticulo.setBounds(22, 321, 269, 38);
         contentPanel.add(btnAgregarArticulo);
 
         JButton btnFinalizarSolicitud = new JButton("Finalizar solicitud");
@@ -93,7 +93,7 @@ public class Solicitud extends JInternalFrame {
             }
         });
         btnFinalizarSolicitud.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnFinalizarSolicitud.setBounds(299, 321, 269, 38);
+        btnFinalizarSolicitud.setBounds(313, 321, 269, 38);
         contentPanel.add(btnFinalizarSolicitud);
         
         JButton btnSalir = new JButton("Salir");
@@ -103,7 +103,7 @@ public class Solicitud extends JInternalFrame {
             }
         });
         btnSalir.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnSalir.setBounds(171, 369, 269, 38);
+        btnSalir.setBounds(167, 369, 269, 38);
         contentPanel.add(btnSalir);
         
                 lblMensaje = new JLabel();

@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,7 +27,7 @@ public class MenuArticulos extends JInternalFrame {
 		getContentPane().add(scrollPane);
 
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(23, 86, 123, 66);
+		btnSalir.setBounds(31, 152, 123, 66);
 		getContentPane().add(btnSalir);
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -41,12 +40,8 @@ public class MenuArticulos extends JInternalFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnGestionarArticulos.setBounds(31, 15, 123, 66);
+		btnGestionarArticulos.setBounds(31, 43, 123, 66);
 		getContentPane().add(btnGestionarArticulos);
-
-		JButton btnAgregarArticulo = new JButton("Agregar Artículo");
-		btnAgregarArticulo.setBounds(31, 96, 123, 66);
-		getContentPane().add(btnAgregarArticulo);
 
 	}
 

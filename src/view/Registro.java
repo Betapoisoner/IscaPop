@@ -99,7 +99,7 @@ public class Registro extends JInternalFrame {
 					txtContra.setText(null);
 
 				} catch (ExcepcionCentro e1) {
-					JOptionPane.showInternalMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showInternalMessageDialog(null, e1, "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

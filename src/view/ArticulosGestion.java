@@ -76,7 +76,7 @@ public class ArticulosGestion extends JInternalFrame {
 
         btnModificar = new JButton("Modificar");
         btnModificar.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnModificar.setBounds(21, 410, 232, 35);
+        btnModificar.setBounds(19, 410, 232, 35);
         contentPanel.add(btnModificar);
 
         btnEliminar = new JButton("Eliminar");
@@ -85,12 +85,12 @@ public class ArticulosGestion extends JInternalFrame {
         	}
         });
         btnEliminar.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnEliminar.setBounds(275, 410, 260, 35);
+        btnEliminar.setBounds(270, 410, 260, 35);
         contentPanel.add(btnEliminar);
 
         btnSalir = new JButton("Salir");
         btnSalir.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnSalir.setBounds(557, 411, 216, 35);
+        btnSalir.setBounds(549, 411, 216, 35);
         contentPanel.add(btnSalir);
         btnSalir.addActionListener(e -> dispose()); 
     }
