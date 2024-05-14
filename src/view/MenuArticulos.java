@@ -27,20 +27,8 @@ public class MenuArticulos extends JInternalFrame {
 		getContentPane().add(scrollPane);
 
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(31, 177, 123, 66);
+		btnSalir.setBounds(23, 86, 123, 66);
 		getContentPane().add(btnSalir);
-
-		JButton btnGestionarArticulos = new JButton("Gestionar Artículos");
-		btnGestionarArticulos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnGestionarArticulos.setBounds(31, 15, 123, 66);
-		getContentPane().add(btnGestionarArticulos);
-
-		JButton btnAgregarArticulo = new JButton("Agregar Artículo");
-		btnAgregarArticulo.setBounds(31, 96, 123, 66);
-		getContentPane().add(btnAgregarArticulo);
 	}
 
 	public void agregarArticulo(String nombre, int cantidad, String estado) {

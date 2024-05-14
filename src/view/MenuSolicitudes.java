@@ -27,8 +27,12 @@ public class MenuSolicitudes extends JInternalFrame {
 		getContentPane().add(scrollPane);
 
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(28, 66, 123, 66);
+		btnSalir.setBounds(10, 152, 163, 66);
 		getContentPane().add(btnSalir);
+		
+		JButton btnSolicitar = new JButton("Donar");
+		btnSolicitar.setBounds(10, 43, 163, 66);
+		getContentPane().add(btnSolicitar);
 	}
 
 	public void agregarArticulo(String nombre, int cantidad, String estado) {

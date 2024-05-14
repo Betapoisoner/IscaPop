@@ -8,9 +8,14 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import controller.Controller;
+import exceptions.ExcepcionCentro;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -72,7 +77,17 @@ public class Sesion extends JInternalFrame {
 		JButton btnIniciar = new JButton("Iniciar Sesion");
 		btnIniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			String usuario = txtUsr.getText();
+			String contra = textField.getText();
+			try {
+				Controller.iniciar_sesion(usuario, contra);
+				txtUsr.setText(null);
+				textField.setText(null);
 				dispose();
+			} catch (ExcepcionCentro e1) {
+				JOptionPane.showMessageDialog(null, e1, "ERROR", JOptionPane.ERROR_MESSAGE);
+			}
+				
 			}
 
 		});
