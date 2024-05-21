@@ -1,13 +1,11 @@
 package view;
 
-import controller.*;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.sound.midi.ControllerEventListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
@@ -94,10 +92,9 @@ public class Registro extends JInternalFrame {
 
 				try {
 					Controller.registro(usuario, contra, nombre);
-					txtContra.setText(null);
-					txtNombre.setText(null);
-					txtContra.setText(null);
-
+					JOptionPane.showMessageDialog(null, "Has iniciado sesion como " + usuario, "SESION",
+							JOptionPane.INFORMATION_MESSAGE);
+					dispose();
 				} catch (ExcepcionCentro e1) {
 					JOptionPane.showInternalMessageDialog(null, e1, "ERROR", JOptionPane.ERROR_MESSAGE);
 				}

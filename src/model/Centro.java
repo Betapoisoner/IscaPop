@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
 public class Centro {
 	private String id_Centro;
 	private String nombre;
@@ -15,6 +17,13 @@ public class Centro {
 		this.nombre = nombre;
 		this.contrasena = contrasena;
 		articulos = new ArrayList<Articulo>();
+	}
+
+	public Centro() {
+		this.id_Centro = null;
+		this.nombre = null;
+		this.contrasena = null;
+		articulos = null;
 	}
 
 	public String getId_Centro() {
@@ -31,6 +40,10 @@ public class Centro {
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+
+	public void setName(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public List<Articulo> getArticulos() {

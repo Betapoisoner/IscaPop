@@ -4,15 +4,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JDesktopPane;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.awt.event.HierarchyListener;
-import java.awt.event.HierarchyEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JPopupMenu;
@@ -20,16 +11,14 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JMenuItem;
-import javax.swing.Box;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import java.awt.CardLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
-import javax.swing.JTextPane;
+import controller.Controller;
+import exceptions.ExcepcionCentro;
+import model.Centro;
 
 public class Desktop {
 
@@ -77,7 +66,7 @@ public class Desktop {
 		panel.setLayout(null);
 
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 1100, 41);
+		menuBar.setBounds(0, 0, 863, 41);
 		panel.add(menuBar);
 
 		JMenu mnSesion = new JMenu("Sesion");
@@ -133,32 +122,39 @@ public class Desktop {
 
 		JMenuItem mntmVerSolicitudes = new JMenuItem("Ver solicitudes");
 		mnSolicitudes.add(mntmVerSolicitudes);
-		
+
+		JButton btn_sesion = new JButton("Ver sesion");
+		btn_sesion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Centro c = Controller.getSesion();
+					if (c != null && c.getId_Centro() != null) {
+						btn_sesion.setText(c.getId_Centro());
+						JOptionPane.showMessageDialog(null,
+								"La sesion es del centro " + c.getNombre() + " con usuario " + c.getId_Centro(),
+								"Sesion", JOptionPane.INFORMATION_MESSAGE);
+					} else
+						throw new ExcepcionCentro("No hay sesion iniciada");
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, e2, "Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+			}
+		});
+		btn_sesion.setBounds(875, 0, 148, 41);
+		panel.add(btn_sesion);
+
 		JButton btnNewButton = new JButton("Cerrar sesion");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Controller.setSesion(null);
+				btn_sesion.setText("Ver Sesion");
+			}
+		});
 		btnNewButton.setBounds(1025, 0, 148, 41);
 		frame.getContentPane().add(btnNewButton);
-		Connection conn = model.Conexion.getConnection();
-		Statement stmt;
-		try {
-			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-			// Hacer insert/seleccion
-			String sql = "SELECT * FROM centros";
-			ResultSet rs = stmt.executeQuery(sql);
-
-			// Mostrar result set
-			// while(rs.next()) {
-
-			// Primetra entrada
-			rs.first();
-			String nombre = rs.getString(1);
-			String autor = rs.getString(2);
-			String editorial = rs.getString(3);
-			System.out.println("|  " + nombre + "  |  " + autor + "  |  " + editorial + "  |");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Controller.rellenar_arraylists();
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {

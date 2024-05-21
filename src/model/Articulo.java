@@ -1,6 +1,6 @@
 package model;
 
-class Articulo {
+public class Articulo {
 	private String id;
 	private String estado;
 	private int cantidad;

@@ -77,17 +77,17 @@ public class Sesion extends JInternalFrame {
 		JButton btnIniciar = new JButton("Iniciar Sesion");
 		btnIniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			String usuario = txtUsr.getText();
-			String contra = textField.getText();
-			try {
-				Controller.iniciar_sesion(usuario, contra);
-				txtUsr.setText(null);
-				textField.setText(null);
-				dispose();
-			} catch (ExcepcionCentro e1) {
-				JOptionPane.showMessageDialog(null, e1, "ERROR", JOptionPane.ERROR_MESSAGE);
-			}
-				
+				String usuario = txtUsr.getText();
+				String contra = textField.getText();
+				try {
+					Controller.iniciar_sesion(usuario, contra);
+					JOptionPane.showMessageDialog(null, "Has iniciodo seseoion como " + usuario, "SESION",
+							JOptionPane.INFORMATION_MESSAGE);
+					dispose();
+				} catch (ExcepcionCentro e1) {
+					JOptionPane.showMessageDialog(null, e1, "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+
 			}
 
 		});
